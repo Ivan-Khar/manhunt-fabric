@@ -33,7 +33,7 @@ dependencies {
 	mappings loom.layered() {
 		officialMojangMappings()
 		// Use parchment mappings. NOTE: Parchment maven must be manually added. (https://maven.parchmentmc.org)
-		parchment("org.parchmentmc.data:parchment-1.19.3:2023.03.12@zip")
+		parchment("org.parchmentmc.data:parchment-${project.minecraft_version}:${project.parchment_mappings}@zip")
 	}
 
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
@@ -42,9 +42,7 @@ dependencies {
 	//	Server translations API
 	// 	include(modImplementation("fr.catcore:server-translations-api:${project.server_translations_version}"))
 	// 	jitpack version
-	include(modImplementation("com.github.NucleoidMC:Server-Translations:${project.server_translations_version}"))
-	//	Server side command arguments. OUTDATED
-	//  include(modImplementation("ca.stellardrift:colonel:0.2"))
+	include(modImplementation("xyz.nucleoid:server-translations-api:${project.server_translations_version}"))
 
 	//	Carpet for fake players
 	//	modImplementation "com.github.gnembon:fabric-carpet:${project.carpet_version}" jitpack
